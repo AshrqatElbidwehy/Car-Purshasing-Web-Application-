@@ -1,0 +1,185 @@
+<mxfile host="app.diagrams.net" modified="2024-04-23T20:50:06.303Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="gy2KhN0gpaWBGoFKOZn1" version="24.2.8" type="device">
+  <diagram name="Page-1" id="D5EtN6O1kMjCwHKMQcfe">
+    <mxGraphModel dx="2071" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;labelBackgroundColor=none;strokeColor=#0064f0;fontColor=default;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="265" as="sourcePoint" />
+            <mxPoint x="350" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="210" y="266" />
+              <mxPoint x="351" y="266" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#056dff;fontColor=default;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-1" target="ZBR921ufw55qmRg9aaQ5-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-1" value="Login&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="1">
+          <mxGeometry x="90" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;exitX=0.993;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="530" as="sourcePoint" />
+            <mxPoint x="470" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="389" y="530" />
+              <mxPoint x="540" y="530" />
+              <mxPoint x="540" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-14" value="Return cars/ No cars available" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#46495D;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-13">
+          <mxGeometry x="-0.025" y="-1" relative="1" as="geometry">
+            <mxPoint x="19" y="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#e13c05;fontColor=#46495D;fillColor=#B2C9AB;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-2" target="ZBR921ufw55qmRg9aaQ5-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-31" value="invalid car details / successfully added" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-30">
+          <mxGeometry x="-0.1357" y="3" relative="1" as="geometry">
+            <mxPoint y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#de1717;fontColor=#46495D;fillColor=#B2C9AB;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-2" target="ZBR921ufw55qmRg9aaQ5-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="355" />
+              <mxPoint x="380" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-33" value="Add new cars for advertising" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-32">
+          <mxGeometry x="0.1286" y="3" relative="1" as="geometry">
+            <mxPoint x="-70" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-2" value="Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="1">
+          <mxGeometry x="250" y="480" width="140" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.592;exitY=1.061;exitDx=0;exitDy=0;exitPerimeter=0;labelBackgroundColor=none;strokeColor=#0064f0;fontColor=default;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-1" target="ZBR921ufw55qmRg9aaQ5-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="194.73999999999987" y="371.02" as="sourcePoint" />
+            <mxPoint x="279.9994082840236" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="371" />
+              <mxPoint x="160" y="430" />
+              <mxPoint x="160" y="480" />
+              <mxPoint x="160" y="490" />
+              <mxPoint x="230" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-4" value="check credentials" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#46495D;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-3">
+          <mxGeometry x="0.2609" y="-2" relative="1" as="geometry">
+            <mxPoint x="12" y="-34" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;strokeColor=#ff00f7;fontColor=default;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-5" target="ZBR921ufw55qmRg9aaQ5-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-5" value="Register" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#c20fbc;fontColor=default;" edge="1" parent="1" target="ZBR921ufw55qmRg9aaQ5-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="230" as="sourcePoint" />
+            <mxPoint x="219" y="536.34" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="30" y="230" />
+              <mxPoint x="30" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-8" value="Add valid user information" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#46495D;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-7">
+          <mxGeometry x="-0.0684" y="2" relative="1" as="geometry">
+            <mxPoint x="78" y="44" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=15;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="505" as="targetPoint" />
+            <mxPoint x="410" y="230" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="410" y="505" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-12" value="Retrieve cars available to show" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#46495D;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-11">
+          <mxGeometry x="0.108" y="1" relative="1" as="geometry">
+            <mxPoint x="19" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-9" target="ZBR921ufw55qmRg9aaQ5-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="200" />
+              <mxPoint x="530" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-9" value="Car Listing Page" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="1">
+          <mxGeometry x="350" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#3e2cc3;fontColor=default;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-15" target="ZBR921ufw55qmRg9aaQ5-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="794.6666870117188" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="565" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-21" value="Reserve a car" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#46495D;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-20">
+          <mxGeometry x="0.5701" y="1" relative="1" as="geometry">
+            <mxPoint x="25" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-15" value="Car Details" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="1">
+          <mxGeometry x="560" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-22" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.002;exitY=0.782;exitDx=0;exitDy=0;exitPerimeter=0;labelBackgroundColor=none;strokeColor=#442697;fontColor=default;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="ZBR921ufw55qmRg9aaQ5-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390.0000000000002" y="602.94" as="sourcePoint" />
+            <mxPoint x="619.72" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="603" />
+              <mxPoint x="750" y="600" />
+              <mxPoint x="750" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-23" value="Car has already been reserved&lt;br&gt;/&lt;br&gt;reserved successfully" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#46495D;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-22">
+          <mxGeometry x="-0.3565" y="-1" relative="1" as="geometry">
+            <mxPoint x="-54" y="26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-24" value="Car Advertisement" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="1">
+          <mxGeometry x="-60" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.333;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#fb00ff;fontColor=default;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-5" target="ZBR921ufw55qmRg9aaQ5-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.002;entryY=0.574;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#973730;fontColor=#46495D;fillColor=#B2C9AB;" edge="1" parent="1" source="ZBR921ufw55qmRg9aaQ5-24" target="ZBR921ufw55qmRg9aaQ5-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBR921ufw55qmRg9aaQ5-29" value="Add valid car details to be advertised" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;" vertex="1" connectable="0" parent="ZBR921ufw55qmRg9aaQ5-27">
+          <mxGeometry x="0.0088" y="-4" relative="1" as="geometry">
+            <mxPoint y="-24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
