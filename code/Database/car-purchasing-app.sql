@@ -126,7 +126,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `phone-number` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111526590;
+  MODIFY `phone-number` int(13) NOT NULL;
 
 --
 -- Constraints for dumped tables
