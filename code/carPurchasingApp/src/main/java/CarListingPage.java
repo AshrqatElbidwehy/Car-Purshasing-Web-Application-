@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -44,28 +45,26 @@ public class CarListingPage extends javax.swing.JFrame {
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        getContentPane().setBackground(Color.WHITE); // Set background color for the frame
+        getContentPane().setBackground(Color.WHITE); 
 
         // Create navigation bar panel
         JPanel navBarPanel = createNavBarPanel();
         add(navBarPanel, BorderLayout.NORTH);
 
         // Create panel for car listings
-        JPanel carListingPanel = new JPanel(new GridLayout(0, 2, 10, 10)); // Grid layout with 2 columns and spacing
-        carListingPanel.setBackground(Color.WHITE); // Set background color for the car listing panel
-        carListingPanel.setBorder(new EmptyBorder(10, 10, 10, 10)); // Add padding to the car listing panel
+        JPanel carListingPanel = new JPanel(new GridLayout(0, 2, 10, 10)); 
+        carListingPanel.setBackground(Color.WHITE); 
+        carListingPanel.setBorder(new EmptyBorder(10, 10, 10, 10)); 
 
-        // Retrieve car data from database and populate the car listings panel
         populateCarListings(carListingPanel);
 
-        // Add the car listings panel to the frame
         JScrollPane scrollPane = new JScrollPane(carListingPanel);
         add(scrollPane, BorderLayout.CENTER);
     }
 
     private JPanel createNavBarPanel() {
         JPanel navBarPanel = new JPanel(new BorderLayout());
-        navBarPanel.setBackground(Color.RED); // Set background color for the navigation bar
+        navBarPanel.setBackground(Color.RED); 
 
         // Title button (Clickable "Car Purchasing App")
         JLabel titleLabel = new JLabel("Car Purchasing App", SwingConstants.CENTER);
@@ -74,24 +73,40 @@ public class CarListingPage extends javax.swing.JFrame {
         titleLabel.setBorder(new EmptyBorder(10, 0, 10, 0)); // Add padding
         navBarPanel.add(titleLabel, BorderLayout.CENTER);
 
-        // User icon button
-        ImageIcon userIcon = new ImageIcon("/user.png");
-        JButton userIconBtn = new JButton(userIcon); // Replace "userIcon.png" with actual icon path
-        userIconBtn.setContentAreaFilled(false); // Make button transparent
-        userIconBtn.setBorderPainted(false); // Remove border
+        
+//user acc pg
+
+        JButton userIconBtn = new JButton(new ImageIcon("user.png")); 
+        userIconBtn.setContentAreaFilled(true);
+        userIconBtn.setBackground(Color.red);
+        userIconBtn.setBorderPainted(true); 
+        userIconBtn.setText("user");
+          userIconBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Direct to user account
+//                SearchPage searchPage = new SearchPage();
+//                searchPage.setVisible(true);
+            }
+        });
+          
         navBarPanel.add(userIconBtn, BorderLayout.EAST);
 
-        // Search icon button
-        ImageIcon searchIcon = new ImageIcon("/search-normal.png");
-        JButton searchIconBtn = new JButton(searchIcon);
-        searchIconBtn.setContentAreaFilled(false); // Make button transparent
-        searchIconBtn.setBorderPainted(false); // Remove border
+        
+       // search pg
+       
+        JButton searchIconBtn = new JButton(new ImageIcon("search.jpeg"));
+        searchIconBtn.setContentAreaFilled(true); 
+        searchIconBtn.setBorderPainted(true); 
+        searchIconBtn.setBackground(Color.red);
+        searchIconBtn.setText("Search!");
+        navBarPanel.add(searchIconBtn, BorderLayout.WEST);
         searchIconBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Direct to SearchPage
-//                SearchPage searchPage = new SearchPage();
-//                searchPage.setVisible(true);
+                CarSearch searchPage = new CarSearch();
+                searchPage.setVisible(true);
             }
         });
         navBarPanel.add(searchIconBtn, BorderLayout.WEST);
@@ -118,6 +133,8 @@ public class CarListingPage extends javax.swing.JFrame {
         advertiseCarBtn.setForeground(Color.WHITE); // Set text color
         advertiseCarBtn.setContentAreaFilled(false); // Make button transparent
         advertiseCarBtn.setBorderPainted(false); // Remove border
+        
+        
         advertiseCarBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -173,16 +190,13 @@ public class CarListingPage extends javax.swing.JFrame {
                 while (rs.next()) {
                     String model = rs.getString("model-name");
                     double price = rs.getDouble("price");
-                    byte[] imageData = rs.getBytes("car image"); // Assuming the image data is stored in the database
+                    byte[] imageData = rs.getBytes("car image"); 
 
-                    // Create panel for each car listing
                     JPanel carPanel = new JPanel(new BorderLayout());
-                    carPanel.setPreferredSize(new Dimension(300, 200)); // Set preferred size for car panel
-                    carPanel.setBackground(Color.WHITE); // Set background color for the car panel
-                    Border border = new LineBorder(Color.BLACK, 1); // Create border
-                    carPanel.setBorder(BorderFactory.createCompoundBorder(border, BorderFactory.createEmptyBorder(10, 10, 10, 10))); // Add border with padding
-
-                    // Load and display image
+                    carPanel.setPreferredSize(new Dimension(300, 200));
+                    carPanel.setBackground(Color.WHITE);
+                    Border border = new LineBorder(Color.BLACK, 1); 
+                    carPanel.setBorder(BorderFactory.createCompoundBorder(border, BorderFactory.createEmptyBorder(10, 10, 10, 10))); 
                     try {
                         ImageIcon icon = new ImageIcon(imageData);
                         Image scaledImage = icon.getImage().getScaledInstance(320, 100, Image.SCALE_SMOOTH);
@@ -193,35 +207,32 @@ public class CarListingPage extends javax.swing.JFrame {
                         ex.printStackTrace();
                     }
 
-                    // Display car model and price
+                    
                     JLabel modelLabel = new JLabel("Model: " + model);
                     JLabel priceLabel = new JLabel("Price: EGP " + price);
-                    modelLabel.setHorizontalAlignment(JLabel.CENTER); // Center align model label
-                    priceLabel.setHorizontalAlignment(JLabel.CENTER); // Center align price label
+                    modelLabel.setHorizontalAlignment(JLabel.CENTER); 
+                    priceLabel.setHorizontalAlignment(JLabel.CENTER); 
                     JPanel infoPanel = new JPanel(new GridLayout(2, 1));
                     infoPanel.add(modelLabel);
                     infoPanel.add(priceLabel);
-                    infoPanel.setBackground(Color.WHITE); // Set background color for the info panel
+                    infoPanel.setBackground(Color.WHITE); 
                     carPanel.add(infoPanel, BorderLayout.CENTER);
 
                     // Button to view details
                     JButton detailsButton = new JButton("View Car Details");
                     detailsButton.setPreferredSize(new Dimension(190, 40));
-                    detailsButton.setBackground(Color.CYAN);
+                    detailsButton.setBackground(Color.red);
                     detailsButton.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            // Open car details page
-                            // CarDetailsPage detailsPage = new CarDetailsPage(model); // Pass model name to details page
-                            // detailsPage.setVisible(true);
+                            
                         }
                     });
-                    JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER)); // Panel for button alignment
+                    JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
                     buttonPanel.add(detailsButton);
-                    buttonPanel.setBackground(Color.WHITE); // Set background color for the button panel
+                    buttonPanel.setBackground(Color.WHITE);
                     carPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-                    // Add the car panel to the car listings panel
                     carListingPanel.add(carPanel);
                 }
 
@@ -234,30 +245,6 @@ public class CarListingPage extends javax.swing.JFrame {
         }
     }
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CarListingPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CarListingPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CarListingPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CarListingPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CarListingPage().setVisible(true);
