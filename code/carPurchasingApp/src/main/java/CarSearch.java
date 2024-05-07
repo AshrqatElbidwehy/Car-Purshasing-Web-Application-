@@ -16,6 +16,9 @@ public class CarSearch extends javax.swing.JFrame {
 
     private Connection conn; // Connection object from Main class
 
+    CarSearch(){
+        initComponents();
+    }
     /**
      * Creates new form CarSearch
      */
