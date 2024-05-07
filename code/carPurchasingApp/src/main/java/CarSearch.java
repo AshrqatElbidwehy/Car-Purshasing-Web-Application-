@@ -340,7 +340,10 @@ public class CarSearch extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Model '" + modelName + "' exists!");
             } else {
                 // Model doesn't exist
-                JOptionPane.showMessageDialog(this, "Model '" + modelName + "' does not exist.");
+               // JOptionPane.showMessageDialog(this, "Model '" + modelName + "' does not exist.");
+               NoCarFound noCarFound = new NoCarFound(conn);
+        noCarFound.setVisible(true);
+        this.dispose();
             }
         } else {
             // No input provided
