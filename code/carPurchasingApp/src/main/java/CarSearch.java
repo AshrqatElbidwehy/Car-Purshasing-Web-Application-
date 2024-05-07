@@ -142,13 +142,20 @@ public class CarSearch extends javax.swing.JFrame {
         label1.setText("Search");
 
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Enter car model");
+        jTextField1.setText("Enter Car Model");
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField1FocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextField1FocusLost(evt);
+            }
+        });
+        jTextField1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jTextField1InputMethodTextChanged(evt);
             }
         });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +172,7 @@ public class CarSearch extends javax.swing.JFrame {
         });
 
         jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField2.setText("Enter price");
+        jTextField2.setText("Enter Price");
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField2FocusGained(evt);
@@ -235,34 +242,34 @@ public class CarSearch extends javax.swing.JFrame {
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // Clear the text field when it is focused
-        if (jTextField1.getText().equals("Enter Car Model")) {
-            jTextField1.setText("");
-            jTextField1.setForeground(java.awt.Color.BLACK);
-        }
+    if (jTextField1.getText().equals("Enter Car Model")) {
+        jTextField1.setText("");
+        jTextField1.setForeground(java.awt.Color.BLACK);
+    }
     }//GEN-LAST:event_jTextField1FocusGained
 
     private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
         // Reset the text field if no input is provided
-        if (jTextField1.getText().isEmpty()) {
-            jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-            jTextField1.setText("Enter Car Model");
-        }
+    if (jTextField1.getText().isEmpty()) {
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Enter Car Model");
+    }
     }//GEN-LAST:event_jTextField1FocusLost
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
         // Clear the text field when it is focused
-        if (jTextField2.getText().equals("Enter Price")) {
-            jTextField2.setText("");
-            jTextField2.setForeground(java.awt.Color.BLACK);
-        }
+    if (jTextField2.getText().equals("Enter Price")) {
+        jTextField2.setText("");
+        jTextField2.setForeground(java.awt.Color.BLACK);
+    }
     }//GEN-LAST:event_jTextField2FocusGained
 
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
         // Reset the text field if no input is provided
-        if (jTextField2.getText().isEmpty()) {
-            jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-            jTextField2.setText("Enter Price");
-        }
+    if (jTextField2.getText().isEmpty()) {
+        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField2.setText("Enter Price");
+    }
     }//GEN-LAST:event_jTextField2FocusLost
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -340,6 +347,10 @@ public class CarSearch extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please enter a car model.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTextField1InputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1InputMethodTextChanged
 
     private boolean checkModelExists(String modelName) {
     try {
