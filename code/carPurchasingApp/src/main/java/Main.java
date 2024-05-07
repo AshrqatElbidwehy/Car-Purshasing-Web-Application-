@@ -49,8 +49,8 @@ public class Main {
             
 
             // Create an instance of CarSearch and pass the connection object
-            //CarSearch carSearch = new CarSearch(conn);
-            //carSearch.setVisible(true);
+            CarSearch carSearch = new CarSearch(conn);
+            carSearch.setVisible(true);
 
 
             // Close the connection when done

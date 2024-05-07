@@ -180,7 +180,7 @@ public class Login extends javax.swing.JFrame {
                 rs = pst.executeQuery();
                 if(rs.next()){
                     JOptionPane.showMessageDialog(null, "login successfully");
-                    new CarListing().setVisible(true);
+                    new CarListingPage().setVisible(true);
                     dispose();
                 }else{
                     JOptionPane.showMessageDialog(null, "Invalid Password!");
