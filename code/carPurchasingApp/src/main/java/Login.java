@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
  * @author Sant
  */
 public class Login extends javax.swing.JFrame {
+    String userID;
+    String password;
     Connection conn;
     PreparedStatement pst;
     ResultSet rs;
@@ -45,6 +47,35 @@ public class Login extends javax.swing.JFrame {
         });
     }
 
+    private void credentialsValidation() {
+        userID = phoneNumberField.getText();
+        password = passwordField.getText();
+        try{
+            String idQuery = "SELECT * FROM `user` WHERE `phone-number`=?";
+            pst = conn.prepareStatement(idQuery);
+            pst.setString(1, userID);
+            rs = pst.executeQuery();
+            if(rs.next()){
+                String loginQuery = "SELECT * FROM `user` WHERE `phone-number`=? AND `password`=?";
+                pst = conn.prepareStatement(loginQuery);
+                pst.setString(1, userID);
+                pst.setString(2, password);
+                rs = pst.executeQuery();
+                if(rs.next()){
+                    JOptionPane.showMessageDialog(null, "login successfully");
+                    new CarListing().setVisible(true);
+                    dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Invalid Password!");
+                }         
+            }else{
+                JOptionPane.showMessageDialog(null, "Phone number does not exist!");
+            }
+              
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,38 +191,11 @@ public class Login extends javax.swing.JFrame {
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
-        passwordField.setText("");
     }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String userID = phoneNumberField.getText();
-        String password = passwordField.getText();
-        try{
-            String idQuery = "SELECT * FROM `user` WHERE `phone-number`=?";
-            pst = conn.prepareStatement(idQuery);
-            pst.setString(1, userID);
-            rs = pst.executeQuery();
-            if(rs.next()){
-                String loginQuery = "SELECT * FROM `user` WHERE `phone-number`=? AND `password`=?";
-                pst = conn.prepareStatement(loginQuery);
-                pst.setString(1, userID);
-                pst.setString(2, password);
-                rs = pst.executeQuery();
-                if(rs.next()){
-                    JOptionPane.showMessageDialog(null, "login successfully");
-                    new CarListingPage().setVisible(true);
-                    dispose();
-                }else{
-                    JOptionPane.showMessageDialog(null, "Invalid Password!");
-                }         
-            }else{
-                JOptionPane.showMessageDialog(null, "Phone number does not exist!");
-            }
-              
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, e);
-        }
+        credentialsValidation();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

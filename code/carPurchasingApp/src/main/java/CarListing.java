@@ -35,12 +35,12 @@ import javax.swing.border.LineBorder;
  *
  * @author amira
  */
-public class CarListingPage extends javax.swing.JFrame {
+public class CarListing extends javax.swing.JFrame {
 
     /**
      * Creates new form CarListingPage
      */
-    public CarListingPage() {
+    public CarListing() {
         initComponents();
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -247,7 +247,7 @@ public class CarListingPage extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CarListingPage().setVisible(true);
+                new CarListing().setVisible(true);
             }
         });
     }
