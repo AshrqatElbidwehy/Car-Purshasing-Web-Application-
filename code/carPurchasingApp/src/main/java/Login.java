@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
             }
               
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "ERROR");
         }
     }
     /**
