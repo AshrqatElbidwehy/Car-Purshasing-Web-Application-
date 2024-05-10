@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class CarSearch extends javax.swing.JFrame {
 
     private Connection conn; // Connection object from Main class
-
     /**
      * Creates new form CarSearch
      */
@@ -33,40 +32,156 @@ public class CarSearch extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField3 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        label1 = new java.awt.Label();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("sansserif", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Car Purchasing Website");
+
+        jPanel7.setBackground(new java.awt.Color(204, 0, 0));
+
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Search");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(327, 327, 327))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(290, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(243, 243, 243))
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(24, 24, 24)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel5.setBackground(new java.awt.Color(153, 0, 0));
+
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Join us now");
+
+        jLabel5.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("   Contact");
+
+        jLabel7.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("   About us");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(376, 376, 376))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        label1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label1.setText("Search");
+
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Enter Car Model");
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
+        jTextField1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jTextField1InputMethodTextChanged(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
+        jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField2.setText("Enter Price");
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField2FocusLost(evt);
+            }
+        });
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("Car Search");
-
-        jLabel2.setText("Model Name");
-
-        jLabel3.setText("Price");
 
         jButton2.setText("Search");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -75,130 +190,218 @@ public class CarSearch extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(214, 214, 214)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
+                        .addGap(368, 368, 368)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(289, 289, 289)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 49, 49)
-                                .addComponent(jButton3)))))
-                .addContainerGap(2051, Short.MAX_VALUE))
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(370, 370, 370)
+                        .addComponent(jButton2)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
-                .addContainerGap(2042, Short.MAX_VALUE))
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addGap(78, 78, 78)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        String modelName = jTextField1.getText().trim();
-        if (modelName.isEmpty()) {
-            JOptionPane.showMessageDialog(this,
-                    "Please enter a model name.",
-                    "Empty Field",
-                    JOptionPane.WARNING_MESSAGE);
-        } else {
-            boolean modelExists = checkModelExists(modelName);
-            if (modelExists) {
-                JOptionPane.showMessageDialog(this,
-                        "Model name '" + modelName + "' exists in the database.",
-                        "Model Found",
-                        JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        "Model name '" + modelName + "' does not exist in the database.",
-                        "Model Not Found",
-                        JOptionPane.WARNING_MESSAGE);
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // Clear the text field when it is focused
+    if (jTextField1.getText().equals("Enter Car Model")) {
+        jTextField1.setText("");
+        jTextField1.setForeground(java.awt.Color.BLACK);
+    }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // Reset the text field if no input is provided
+    if (jTextField1.getText().isEmpty()) {
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Enter Car Model");
+    }
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
+        // Clear the text field when it is focused
+    if (jTextField2.getText().equals("Enter Price")) {
+        jTextField2.setText("");
+        jTextField2.setForeground(java.awt.Color.BLACK);
+    }
+    }//GEN-LAST:event_jTextField2FocusGained
+
+    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+        // Reset the text field if no input is provided
+    if (jTextField2.getText().isEmpty()) {
+        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField2.setText("Enter Price");
+    }
+    }//GEN-LAST:event_jTextField2FocusLost
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         // Action to perform when the second button is clicked (submit button for price search)
+    String priceStr = jTextField2.getText().trim();
+    if (!priceStr.equals("Enter Price") && !priceStr.isEmpty()) {
+        try {
+            double price = Double.parseDouble(priceStr);
+            if (price < 0 || price > 999999999) {
+                JOptionPane.showMessageDialog(this, "Price range should be between 0 and 999,999,999.");
+                return;
             }
+            
+            // Perform the search by price range
+            boolean carsFound = searchByPriceRange(price);
+            if (carsFound) {
+                CarListing carListingPage = new CarListing();
+                carListingPage.updateCarListingsPrice(price);
+                carListingPage.setVisible(true);
+                this.dispose(); // Close the current search page
+            } else {
+                JOptionPane.showMessageDialog(this, "No cars found within the specified price range.");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid numeric price.");
         }
+    } else {
+        // No input provided
+        JOptionPane.showMessageDialog(this, "Please enter a price.");
+    }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // Action to perform when the user presses "Enter" in jTextField1
+    String modelName = jTextField1.getText();
+    if (!modelName.equals("Enter Car Model") && !modelName.isEmpty()) {
+        if (checkModelExists(modelName)) {
+            // Model exists
+            JOptionPane.showMessageDialog(this, "Model '" + modelName + "' exists!");
+        } else {
+            // Model doesn't exist
+            JOptionPane.showMessageDialog(this, "Model '" + modelName + "' does not exist.");
+        }
+    } else {
+        // No input provided
+        JOptionPane.showMessageDialog(this, "Please enter a car model.");
+    }
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jTextField1ActionPerformed(evt);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       String minPriceStr = jTextField2.getText().trim();
-       String maxPriceStr = jTextField3.getText().trim();
-
-    // Check if either minimum or maximum price is entered
-    if (!minPriceStr.isEmpty() || !maxPriceStr.isEmpty()) {
+        // Action to perform when the second button is clicked (submit button for price search)
+    String priceStr = jTextField2.getText().trim();
+    if (!priceStr.equals("Enter Price") && !priceStr.isEmpty()) {
         try {
-            // Convert input strings to numeric values
-            double minPrice = minPriceStr.isEmpty() ? 0 : Double.parseDouble(minPriceStr);
-            double maxPrice = maxPriceStr.isEmpty() ? Double.MAX_VALUE : Double.parseDouble(maxPriceStr);
-
-            // Perform the search based on the price range
-            searchByPriceRange(minPrice, maxPrice);
+            long price = Long.parseLong(priceStr);
+            if (price < 0 || price > 999999999) {
+                JOptionPane.showMessageDialog(this, "Price range should be between 0 and 999,999,999.");
+                return;
+            }
+            
+            // Perform the search by price range
+            searchByPriceRange(price);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this,
-                    "Please enter valid numeric values for the price range.",
-                    "Invalid Input",
-                    JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter a valid numeric price.");
         }
     } else {
-        JOptionPane.showMessageDialog(this,
-                "Please enter either the minimum or maximum price.",
-                "Empty Field",
-                JOptionPane.WARNING_MESSAGE);
+        // No input provided
+        JOptionPane.showMessageDialog(this, "Please enter a price.");
     }
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+// Action to perform when the first button is clicked (submit button for car model search)
+    String modelName = jTextField1.getText();
+    if (!modelName.equals("Enter Car Model") && !modelName.isEmpty()) {
+        CarListing carListingPage = new CarListing();
+        carListingPage.updateCarListings(modelName); // Search for and display cars matching the entered model
+        carListingPage.setVisible(true);
+        this.dispose(); // Close the current search page
+    } else {
+        // No input provided
+        JOptionPane.showMessageDialog(this, "Please enter a car model.");
+    }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jTextField1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTextField1InputMethodTextChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_jTextField1InputMethodTextChanged
 
-    private boolean checkModelExists(String modelName) {
+    
+    private List<String> getSearchResults(String modelName) {
+    List<String> searchResults = new ArrayList<>();
     try {
-        // Check if the connection is closed; if so, reopen it
-        if (conn.isClosed()) {
+        // Reopen the connection if it's closed
+//        if (conn.isClosed()) {
             conn = Main.conn(); // Reconnect to the database
+       // }
+
+        PreparedStatement stmt = conn.prepareStatement("SELECT `model-name` FROM car WHERE `model-name` = ?");
+        stmt.setString(1, modelName);
+        ResultSet rs = stmt.executeQuery();
+
+        // Retrieve and store search results
+        while (rs.next()) {
+            String result = rs.getString("model-name");
+            searchResults.add(result);
         }
-        
+
+        rs.close();
+        stmt.close();
+    } catch (SQLException e) {
+        System.err.println("Error fetching search results: " + e.getMessage());
+    }
+    return searchResults;
+}
+    
+    private boolean searchByPriceRange(double maxPrice) {
+    try {
+        Connection conn = Main.conn();
+        PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM car WHERE price <= ?");
+        stmt.setDouble(1, maxPrice);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        int count = rs.getInt(1);
+        rs.close();
+        stmt.close();
+        return count > 0;
+    } catch (SQLException e) {
+        System.err.println("Error searching by price range: " + e.getMessage());
+        return false;
+    }
+}
+
+private boolean checkModelExists(String modelName) {
+    try {
+        Connection conn = Main.conn(); // Assuming you have a method to get the connection 
         PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM car WHERE `model-name` = ?");//
         stmt.setString(1, modelName);
         ResultSet rs = stmt.executeQuery();
@@ -214,54 +417,21 @@ public class CarSearch extends javax.swing.JFrame {
 }
 
 
-    private void searchByPriceRange(double minPrice, double maxPrice) {
-    try {
-        // Reopen the connection if it's closed
-        if (conn.isClosed()) {
-            conn = Main.conn(); // Reconnect to the database
-        }
-
-        PreparedStatement stmt = conn.prepareStatement("SELECT `model-name` FROM car WHERE price BETWEEN ? AND ?");
-        stmt.setDouble(1, minPrice);
-        stmt.setDouble(2, maxPrice);
-        ResultSet rs = stmt.executeQuery();
-
-        List<String> carModels = new ArrayList<>();
-
-        // Retrieve and store model names
-        while (rs.next()) {
-            String modelName = rs.getString("model-name");
-            carModels.add(modelName);
-        }
-
-        // Check if cars exist in the price range
-        if (!carModels.isEmpty()) {
-            // Cars exist in the price range
-            System.out.println("Cars exist in the price range:");
-            for (String modelName : carModels) {
-                System.out.println("- " + modelName);
-            }
-        } else {
-            // No cars exist in the price range
-            System.out.println("No cars exist in the price range.");
-        }
-
-        rs.close();
-        stmt.close();
-    } catch (SQLException e) {
-        System.err.println("Error searching by price range: " + e.getMessage());
-    }
-}
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }

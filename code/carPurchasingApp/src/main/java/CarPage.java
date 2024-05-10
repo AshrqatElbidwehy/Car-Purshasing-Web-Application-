@@ -7,6 +7,7 @@
  *
  * @author amira
  */
-class CarDetailsPage {
+class CarPage {
+    
     
 }

@@ -38,7 +38,7 @@ public class Main {
                 ResultSet rs = pst.executeQuery();
                 while (rs.next()) {
                     // Process the result set
-                    String columnValue = rs.getString("first-name");
+                    String columnValue = rs.getString("full-name");
                     System.out.println(columnValue);
                 }
                 rs.close();
@@ -46,12 +46,14 @@ public class Main {
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
-            /*
+            
 
             // Create an instance of CarSearch and pass the connection object
-            CarSearch carSearch = new CarSearch(conn);
-            carSearch.setVisible(true);
-*/
+            CarListing carListing = new CarListing();
+            carListing.setVisible(true);
+            //CarSearch carSearch = new CarSearch(conn);
+            //carSearch.setVisible(true);
+
 
             // Close the connection when done
             try {
