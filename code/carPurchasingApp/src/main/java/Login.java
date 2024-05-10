@@ -1,4 +1,6 @@
 
+import java.awt.Dimension;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
@@ -200,9 +202,14 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
-        //new Registeration().setVisible(true);
-        dispose();
+            Point loginWindowLocation = this.getLocation();
+            Dimension loginWindowSize = this.getSize();
+            setVisible(false);
+            Registeration regobj = new Registeration();
+            regobj.setSize(loginWindowSize);
+            regobj.setLocation(loginWindowLocation);
+            regobj.setVisible(true);
+            dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
