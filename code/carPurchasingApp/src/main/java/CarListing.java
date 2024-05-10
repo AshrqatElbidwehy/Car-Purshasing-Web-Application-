@@ -107,6 +107,7 @@ public class CarListing extends javax.swing.JFrame {
                 // Direct to SearchPage
                 CarSearch searchPage = new CarSearch();
                 searchPage.setVisible(true);
+                
             }
         });
         navBarPanel.add(searchIconBtn, BorderLayout.WEST);
