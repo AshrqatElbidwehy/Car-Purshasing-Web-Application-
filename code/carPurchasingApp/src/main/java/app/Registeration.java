@@ -79,8 +79,9 @@ public class Registeration extends javax.swing.JFrame {
 }
    
        public void redirect(){
-             try (Connection con =Databaseconnection.openConnection();
-          PreparedStatement statement = con.prepareStatement("insert into`user`(`phone-number`, `full-name`, `password`)values(?,?,?)")) {
+             try {
+           con =Databaseconnection.openConnection();
+          PreparedStatement statement = con.prepareStatement("insert into`user`(`phone-number`, `full-name`, `password`)values(?,?,?)");
           statement.setString(1, phone);
           statement.setString(2, name);
           statement.setString(3, password);
