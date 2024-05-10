@@ -15,10 +15,6 @@ import java.util.ArrayList;
 public class CarSearch extends javax.swing.JFrame {
 
     private Connection conn; // Connection object from Main class
-
-    CarSearch(){
-        initComponents();
-    }
     /**
      * Creates new form CarSearch
      */
@@ -277,14 +273,22 @@ public class CarSearch extends javax.swing.JFrame {
     String priceStr = jTextField2.getText().trim();
     if (!priceStr.equals("Enter Price") && !priceStr.isEmpty()) {
         try {
-            long price = Long.parseLong(priceStr);
+            double price = Double.parseDouble(priceStr);
             if (price < 0 || price > 999999999) {
                 JOptionPane.showMessageDialog(this, "Price range should be between 0 and 999,999,999.");
                 return;
             }
             
             // Perform the search by price range
-            searchByPriceRange(0, price);
+            boolean carsFound = searchByPriceRange(price);
+            if (carsFound) {
+                CarListing carListingPage = new CarListing();
+                carListingPage.updateCarListingsPrice(price);
+                carListingPage.setVisible(true);
+                this.dispose(); // Close the current search page
+            } else {
+                JOptionPane.showMessageDialog(this, "No cars found within the specified price range.");
+            }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid numeric price.");
         }
@@ -312,56 +316,92 @@ public class CarSearch extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // Action to perform when the user presses "Enter" in jTextField2
+        // Action to perform when the second button is clicked (submit button for price search)
     String priceStr = jTextField2.getText().trim();
-    
-    // Check if the entered price is within the valid range
-    try {
-        long price = Long.parseLong(priceStr);
-        if (price < 0 || price > 999999999) {
-            JOptionPane.showMessageDialog(this, "Price range should be between 0 and 999,999,999.");
-            return;
+    if (!priceStr.equals("Enter Price") && !priceStr.isEmpty()) {
+        try {
+            long price = Long.parseLong(priceStr);
+            if (price < 0 || price > 999999999) {
+                JOptionPane.showMessageDialog(this, "Price range should be between 0 and 999,999,999.");
+                return;
+            }
+            
+            // Perform the search by price range
+            searchByPriceRange(price);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid numeric price.");
         }
-        
-        // Set the price range from 0 to the entered price
-        jTextField2.setText(priceStr); // Update the text field with the entered price
-        searchByPriceRange(0, price);
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Please enter a valid numeric price.");
+    } else {
+        // No input provided
+        JOptionPane.showMessageDialog(this, "Please enter a price.");
     }
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Action to perform when the first button is clicked (submit button for car model search)
-        String modelName = jTextField1.getText();
-        if (!modelName.equals("Enter Car Model") && !modelName.isEmpty()) {
-            if (checkModelExists(modelName)) {
-                // Model exists
-                JOptionPane.showMessageDialog(this, "Model '" + modelName + "' exists!");
-            } else {
-                // Model doesn't exist
-               // JOptionPane.showMessageDialog(this, "Model '" + modelName + "' does not exist.");
-               NoCarFound noCarFound = new NoCarFound(conn);
-        noCarFound.setVisible(true);
-        this.dispose();
-            }
-        } else {
-            // No input provided
-            JOptionPane.showMessageDialog(this, "Please enter a car model.");
-        }
+// Action to perform when the first button is clicked (submit button for car model search)
+    String modelName = jTextField1.getText();
+    if (!modelName.equals("Enter Car Model") && !modelName.isEmpty()) {
+        CarListing carListingPage = new CarListing();
+        carListingPage.updateCarListings(modelName); // Search for and display cars matching the entered model
+        carListingPage.setVisible(true);
+        this.dispose(); // Close the current search page
+    } else {
+        // No input provided
+        JOptionPane.showMessageDialog(this, "Please enter a car model.");
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTextField1InputMethodTextChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1InputMethodTextChanged
 
-    private boolean checkModelExists(String modelName) {
+    
+    private List<String> getSearchResults(String modelName) {
+    List<String> searchResults = new ArrayList<>();
     try {
-        // Check if the connection is closed; if so, reopen it
-        if (conn.isClosed()) {
+        // Reopen the connection if it's closed
+//        if (conn.isClosed()) {
             conn = Main.conn(); // Reconnect to the database
+       // }
+
+        PreparedStatement stmt = conn.prepareStatement("SELECT `model-name` FROM car WHERE `model-name` = ?");
+        stmt.setString(1, modelName);
+        ResultSet rs = stmt.executeQuery();
+
+        // Retrieve and store search results
+        while (rs.next()) {
+            String result = rs.getString("model-name");
+            searchResults.add(result);
         }
-        
+
+        rs.close();
+        stmt.close();
+    } catch (SQLException e) {
+        System.err.println("Error fetching search results: " + e.getMessage());
+    }
+    return searchResults;
+}
+    
+    private boolean searchByPriceRange(double maxPrice) {
+    try {
+        Connection conn = Main.conn();
+        PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM car WHERE price <= ?");
+        stmt.setDouble(1, maxPrice);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        int count = rs.getInt(1);
+        rs.close();
+        stmt.close();
+        return count > 0;
+    } catch (SQLException e) {
+        System.err.println("Error searching by price range: " + e.getMessage());
+        return false;
+    }
+}
+
+private boolean checkModelExists(String modelName) {
+    try {
+        Connection conn = Main.conn(); // Assuming you have a method to get the connection 
         PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM car WHERE `model-name` = ?");//
         stmt.setString(1, modelName);
         ResultSet rs = stmt.executeQuery();
@@ -377,44 +417,6 @@ public class CarSearch extends javax.swing.JFrame {
 }
 
 
-    private void searchByPriceRange(double minPrice, double maxPrice) {
-    try {
-        // Reopen the connection if it's closed
-        if (conn.isClosed()) {
-            conn = Main.conn(); // Reconnect to the database
-        }
-
-        PreparedStatement stmt = conn.prepareStatement("SELECT `model-name` FROM car WHERE price BETWEEN ? AND ?");
-        stmt.setDouble(1, 0); // Set the minimum price to 0
-        stmt.setDouble(2, maxPrice); // Set the maximum price to the entered price
-        ResultSet rs = stmt.executeQuery();
-
-        List<String> carModels = new ArrayList<>();
-
-        // Retrieve and store model names
-        while (rs.next()) {
-            String modelName = rs.getString("model-name");
-            carModels.add(modelName);
-        }
-
-        // Check if cars exist in the price range
-        if (!carModels.isEmpty()) {
-            // Cars exist in the price range
-            System.out.println("Cars exist in the price range:");
-            for (String modelName : carModels) {
-                System.out.println("- " + modelName);
-            }
-        } else {
-            // No cars exist in the price range
-            System.out.println("No cars exist in the price range.");
-        }
-
-        rs.close();
-        stmt.close();
-    } catch (SQLException e) {
-        System.err.println("Error searching by price range: " + e.getMessage());
-    }
-}
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
