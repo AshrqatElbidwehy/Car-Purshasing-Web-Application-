@@ -31,22 +31,11 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
         conn = Main.conn();
         
-        phoneNumberField.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                phoneNumberField.setText("");
-            }
-        });
+                  jLabel1.requestFocusInWindow();
 
-        passwordField.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                passwordField.setText("");
-            }
-        });
     }
 
     private void credentialsValidation() {
@@ -65,7 +54,14 @@ public class Login extends javax.swing.JFrame {
                 rs = pst.executeQuery();
                 if(rs.next()){
                     JOptionPane.showMessageDialog(null, "login successfully");
-                    new CarListing().setVisible(true);
+                          Point loginWindowLocation = this.getLocation();
+                          Dimension loginWindowSize = this.getSize();
+                         setVisible(false);
+                         CarListing listingobj=   new CarListing();
+                         listingobj.setSize(loginWindowSize);
+                         listingobj.setLocation(loginWindowLocation);
+                         listingobj.setVisible(true);
+           
                     dispose();
                 }else{
                     JOptionPane.showMessageDialog(null, "Invalid Password!");
@@ -94,12 +90,22 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(740, 750));
+        setPreferredSize(new java.awt.Dimension(740, 750));
 
         phoneNumberField.setBackground(new java.awt.Color(0, 0, 0));
         phoneNumberField.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         phoneNumberField.setForeground(new java.awt.Color(255, 255, 255));
         phoneNumberField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         phoneNumberField.setText("Mobile Phone");
+        phoneNumberField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phoneNumberFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phoneNumberFieldFocusLost(evt);
+            }
+        });
         phoneNumberField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 phoneNumberFieldActionPerformed(evt);
@@ -111,6 +117,14 @@ public class Login extends javax.swing.JFrame {
         passwordField.setForeground(new java.awt.Color(255, 255, 255));
         passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passwordField.setText("Password");
+        passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFieldFocusLost(evt);
+            }
+        });
         passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordFieldActionPerformed(evt);
@@ -211,6 +225,38 @@ public class Login extends javax.swing.JFrame {
             regobj.setVisible(true);
             dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void phoneNumberFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFieldFocusGained
+        // TODO add your handling code here:
+             if (phoneNumberField.getText().equals("Mobile Phone")) {
+        phoneNumberField.setText("");
+        phoneNumberField.setForeground(java.awt.Color.WHITE);
+    }
+    }//GEN-LAST:event_phoneNumberFieldFocusGained
+
+    private void phoneNumberFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberFieldFocusLost
+        // TODO add your handling code here:
+              if (phoneNumberField.getText().isEmpty()) {
+       phoneNumberField.setForeground(java.awt.Color.WHITE);
+        phoneNumberField.setText("Mobile Phone");
+    }
+    }//GEN-LAST:event_phoneNumberFieldFocusLost
+
+    private void passwordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusGained
+        // TODO add your handling code here:
+            if (passwordField.getText().equals("Password")) {
+           passwordField.setText("");
+          passwordField.setForeground(java.awt.Color.WHITE);
+    }
+    }//GEN-LAST:event_passwordFieldFocusGained
+
+    private void passwordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFieldFocusLost
+        // TODO add your handling code here:
+               if (passwordField.getText().isEmpty()) {
+       passwordField.setForeground(java.awt.Color.WHITE);
+        passwordField.setText("Password");
+    }
+    }//GEN-LAST:event_passwordFieldFocusLost
 
     /**
      * @param args the command line arguments

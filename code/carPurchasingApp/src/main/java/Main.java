@@ -49,8 +49,8 @@ public class Main {
             
 
             // Create an instance of CarSearch and pass the connection object
-            CarListing carListing = new CarListing();
-            carListing.setVisible(true);
+            Login loginobj = new Login();
+            loginobj.setVisible(true);
             //CarSearch carSearch = new CarSearch(conn);
             //carSearch.setVisible(true);
 

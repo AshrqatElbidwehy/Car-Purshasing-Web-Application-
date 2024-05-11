@@ -47,6 +47,8 @@ public class CarSearch extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(740, 750));
+        setPreferredSize(new java.awt.Dimension(740, 750));
 
         jPanel1.setBackground(new java.awt.Color(153, 0, 0));
 
