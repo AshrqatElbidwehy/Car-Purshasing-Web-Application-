@@ -1,11 +1,30 @@
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\AdminPage.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarAdvertisement.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\Registeration.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\NoCarFound.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarSearch.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\Login.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarPage.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarListing.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarDetailsValidation.java
+<<<<<<< HEAD
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\CarSearch.java
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\CarAdvertisement.java
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\Databaseconnection.java
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\Registeration.java
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\CarListingPage.java
 C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\Main.java
-C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarConfirmation.java
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\CarDetailsPage.java
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\Login.java
+C:\Users\Saiko\Downloads\iti\QA project\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\app\NoCarFound.java
+=======
+<<<<<<< Updated upstream
+C:\Users\Muhammed Magdy\Desktop\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarListing.java
+C:\Users\Muhammed Magdy\Desktop\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarAdvertisement.java
+C:\Users\Muhammed Magdy\Desktop\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarPage.java
+C:\Users\Muhammed Magdy\Desktop\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\Login.java
+C:\Users\Muhammed Magdy\Desktop\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\NoCarFound.java
+C:\Users\Muhammed Magdy\Desktop\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\Main.java
+C:\Users\Muhammed Magdy\Desktop\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarSearch.java
+=======
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\NoCarFound.java
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\Main.java
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\AdminPage.java
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarPage.java
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\Login.java
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarSearch.java
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarAdvertisement.java
+D:\iTi\carPurchasing\Car-Purshasing-Web-Application-\code\carPurchasingApp\src\main\java\CarListing.java
+>>>>>>> Stashed changes
+>>>>>>> feca738d70f715c50f2bf8bd8a665c20831d5aeb
