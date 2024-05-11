@@ -4,6 +4,8 @@
  */
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.*;
 
 import javax.swing.JOptionPane;
@@ -28,7 +30,8 @@ public class Registeration extends javax.swing.JFrame {
     public Registeration() {
         initComponents();
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
-            
+                jLabel1.requestFocusInWindow();
+
 
         
     }
@@ -122,7 +125,8 @@ public class Registeration extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(350, 550));
+        setMinimumSize(new java.awt.Dimension(740, 750));
+        setPreferredSize(new java.awt.Dimension(740, 750));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Create an Account");
@@ -134,6 +138,14 @@ public class Registeration extends javax.swing.JFrame {
         jTextField1.setText("Name");
         jTextField1.setToolTipText("");
         jTextField1.setOpaque(true);
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -146,6 +158,14 @@ public class Registeration extends javax.swing.JFrame {
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("Mobile Phone");
         jTextField2.setToolTipText("");
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField2FocusLost(evt);
+            }
+        });
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -158,6 +178,14 @@ public class Registeration extends javax.swing.JFrame {
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.setText("Password");
         jTextField3.setToolTipText("");
+        jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField3FocusLost(evt);
+            }
+        });
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -170,6 +198,14 @@ public class Registeration extends javax.swing.JFrame {
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField4.setText("Confirm Password");
         jTextField4.setToolTipText("");
+        jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField4FocusLost(evt);
+            }
+        });
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -259,6 +295,70 @@ public class Registeration extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // Clear the text field when it is focused
+    if (jTextField1.getText().equals("Name")) {
+        jTextField1.setText("");
+        jTextField1.setForeground(java.awt.Color.WHITE);
+    }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // Reset the text field if no input is provided
+    if (jTextField1.getText().isEmpty()) {
+       jTextField1.setForeground(java.awt.Color.WHITE);
+        jTextField1.setText("Name");
+    }
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
+        // TODO add your handling code here:
+           if (jTextField2.getText().equals("Mobile Phone")) {
+        jTextField2.setText("");
+        jTextField2.setForeground(java.awt.Color.WHITE);
+    }
+    }//GEN-LAST:event_jTextField2FocusGained
+
+    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+        // TODO add your handling code here:
+           if (jTextField2.getText().isEmpty()) {
+       jTextField2.setForeground(java.awt.Color.WHITE);
+        jTextField2.setText("Mobile Phone");
+    }
+    }//GEN-LAST:event_jTextField2FocusLost
+
+    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
+        // TODO add your handling code here:
+             if (jTextField3.getText().equals("Password")) {
+        jTextField3.setText("");
+        jTextField3.setForeground(java.awt.Color.WHITE);
+    }
+    }//GEN-LAST:event_jTextField3FocusGained
+
+    private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
+        // TODO add your handling code here:
+             if (jTextField3.getText().isEmpty()) {
+       jTextField3.setForeground(java.awt.Color.WHITE);
+        jTextField3.setText("Password");
+    }
+    }//GEN-LAST:event_jTextField3FocusLost
+
+    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
+        // TODO add your handling code here:
+             if (jTextField4.getText().equals("Confirm Password")) {
+        jTextField4.setText("");
+        jTextField4.setForeground(java.awt.Color.WHITE);
+    }
+    }//GEN-LAST:event_jTextField4FocusGained
+
+    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
+        // TODO add your handling code here:
+             if (jTextField4.getText().isEmpty()) {
+       jTextField4.setForeground(java.awt.Color.WHITE);
+        jTextField4.setText("Confirm Password");
+    }
+    }//GEN-LAST:event_jTextField4FocusLost
 
     /**
      * @param args the command line arguments

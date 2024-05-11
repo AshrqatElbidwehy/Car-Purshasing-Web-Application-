@@ -1,3 +1,13 @@
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +18,32 @@
  * @author ashrq
  */
 public class AdminPage extends javax.swing.JFrame {
+    String userID;
+    String carID;
+    Connection conn;
+    PreparedStatement pst;
+    ResultSet rs;
 
     /**
      * Creates new form AdminPage
      */
     public AdminPage() {
         initComponents();
+        conn = Main.conn();
+        
+         deleteUserField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                deleteUserField.setText("");
+            }
+        });
+
+        deleteAdField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                deleteAdField.setText("");
+            }
+        });
     }
 
     /**
@@ -35,10 +65,14 @@ public class AdminPage extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        deleteUserField = new javax.swing.JTextField();
+        deleteAdField = new javax.swing.JTextField();
+        deleteUserButton = new javax.swing.JButton();
+        deleteAdButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(740, 750));
+        setPreferredSize(new java.awt.Dimension(740, 750));
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 0));
 
@@ -52,10 +86,10 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(328, 328, 328)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(358, 358, 358))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,21 +168,35 @@ public class AdminPage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("Delete Advertisement");
 
-        jTextField1.setBackground(java.awt.SystemColor.controlHighlight);
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setText("Enter User's Mobile Phone");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        deleteUserField.setBackground(java.awt.SystemColor.controlHighlight);
+        deleteUserField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        deleteUserField.setText("Enter User's Mobile Phone");
+        deleteUserField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                deleteUserFieldActionPerformed(evt);
             }
         });
 
-        jTextField2.setBackground(java.awt.SystemColor.controlHighlight);
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField2.setText("Enter Car Advertisement");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        deleteAdField.setBackground(java.awt.SystemColor.controlHighlight);
+        deleteAdField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        deleteAdField.setText("Enter Car ID");
+        deleteAdField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                deleteAdFieldActionPerformed(evt);
+            }
+        });
+
+        deleteUserButton.setText("submit");
+        deleteUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteUserButtonActionPerformed(evt);
+            }
+        });
+
+        deleteAdButton.setText("submit");
+        deleteAdButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteAdButtonActionPerformed(evt);
             }
         });
 
@@ -159,42 +207,84 @@ public class AdminPage extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(173, 173, 173)
+                .addContainerGap(173, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2))
-                .addGap(216, 216, 216))
+                    .addComponent(deleteUserField)
+                    .addComponent(deleteAdField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deleteAdButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                    .addComponent(deleteUserField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87)
+                    .addComponent(deleteAdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteAdButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void deleteUserFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteUserFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_deleteUserFieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void deleteAdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_deleteAdFieldActionPerformed
+
+    private void deleteUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteUserButtonActionPerformed
+        // TODO add your handling code here:
+        userID = deleteUserField.getText();
+        try{
+            String idQuery = "DELETE FROM `user` WHERE `phone-number`=?";
+            pst = conn.prepareStatement(idQuery);
+            pst.setString(1, userID);
+            rs = pst.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "User deleted successfully");        
+            }else{
+                JOptionPane.showMessageDialog(null, "Invalid User ID");
+            }      
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Invalid User ID");
+        }
+    }//GEN-LAST:event_deleteUserButtonActionPerformed
+
+    private void deleteAdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdButtonActionPerformed
+        // TODO add your handling code here:
+        carID = deleteUserField.getText();
+        try{
+            String idQuery = "DELETE FROM `car` WHERE `car-id`=?";
+            pst = conn.prepareStatement(idQuery);
+            pst.setString(1, carID);
+            rs = pst.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "AD deleted successfully");        
+            }else{
+                JOptionPane.showMessageDialog(null, "Invalid Car ID");
+            }      
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Invalid Car ID");
+        }
+    }//GEN-LAST:event_deleteAdButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +322,10 @@ public class AdminPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteAdButton;
+    private javax.swing.JTextField deleteAdField;
+    private javax.swing.JButton deleteUserButton;
+    private javax.swing.JTextField deleteUserField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -242,7 +336,5 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,13 +1,31 @@
-import app.Login;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class Main {
     
-   
+    public static Connection conn(){
+        try{
+            String url = "jdbc:mysql://localhost:3306/car-purchasing-app";
+            String username = "root";
+            String password = ""; // Provide your MySQL password here
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url, username, password);
+            return conn; // Return the connection object
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        
+        return null;
+    }
+
     public static void main(String[] args) {
-<<<<<<< HEAD
-      
-        new Login().setVisible(true);
-     
-=======
         Connection conn = Main.conn(); // Connect to the database
         if (conn != null) {
             System.out.println("Connected to the database");
@@ -31,8 +49,8 @@ public class Main {
             
 
             // Create an instance of CarSearch and pass the connection object
-            CarListing carListing = new CarListing();
-            carListing.setVisible(true);
+            Login loginobj = new Login();
+            loginobj.setVisible(true);
             //CarSearch carSearch = new CarSearch(conn);
             //carSearch.setVisible(true);
 
@@ -46,6 +64,5 @@ public class Main {
         } else {
             System.out.println("Failed to connect to the database");
         }
->>>>>>> feca738d70f715c50f2bf8bd8a665c20831d5aeb
     }
 }

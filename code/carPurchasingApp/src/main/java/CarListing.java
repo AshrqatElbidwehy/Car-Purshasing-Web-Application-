@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -41,12 +42,15 @@ public class CarListing extends javax.swing.JFrame {
     /**
      * Creates new form CarListingPage
      */
-    private Connection conn;
-    private JPanel carListingPanel;
-    public CarListing() {
+           private Connection conn;
+          private JPanel carListingPanel;
+          Point  listingWindowLocation ;
+          Dimension  listingWindowSize ;
+
+        public CarListing() {
         initComponents();
      //   carListingPanel = new JPanel(); // Initialize the JPanel
-        setSize(800, 600);
+      //  setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         getContentPane().setBackground(Color.WHITE); 
@@ -65,6 +69,9 @@ public class CarListing extends javax.swing.JFrame {
 
         JScrollPane scrollPane = new JScrollPane(carListingPanel);
         add(scrollPane, BorderLayout.CENTER);
+                listingWindowLocation = this.getLocation();
+                 listingWindowSize = this.getSize();
+        
     }
 
     private JPanel createNavBarPanel() {
@@ -106,13 +113,21 @@ public class CarListing extends javax.swing.JFrame {
         searchIconBtn.setBackground(Color.red);
         searchIconBtn.setText("Search!");
         navBarPanel.add(searchIconBtn, BorderLayout.WEST);
-        searchIconBtn.addActionListener(new ActionListener() {
+  
+
+
+           searchIconBtn.addActionListener(new ActionListener() {
+               
             @Override
             public void actionPerformed(ActionEvent e) {
+      
                 // Direct to SearchPage
-               // CarSearch searchPage = new CarSearch(conn);
-               // searchPage.setVisible(true);
-                new CarSearch(conn).setVisible(true);
+                      setVisible(false);
+                      CarSearch searchPage = new CarSearch(conn);
+                      searchPage.setSize(listingWindowSize);
+                      searchPage.setLocation(listingWindowLocation);
+                      searchPage.setVisible(true);
+                      dispose();
             }
         });
         navBarPanel.add(searchIconBtn, BorderLayout.WEST);
@@ -140,13 +155,19 @@ public class CarListing extends javax.swing.JFrame {
         advertiseCarBtn.setContentAreaFilled(false); // Make button transparent
         advertiseCarBtn.setBorderPainted(false); // Remove border
         
-        
+       
         advertiseCarBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Direct to CarAdvertisement page
-                CarAdvertisement advertisementPage = new CarAdvertisement();
-                advertisementPage.setVisible(true);
+                  setVisible(false);
+                     CarAdvertisement advertisementPage = new CarAdvertisement();
+                   
+                   
+                      advertisementPage.setSize(listingWindowSize);
+                      advertisementPage.setLocation(listingWindowLocation);
+                      advertisementPage.setVisible(true);
+                      dispose();
             }
         });
         buttonsPanel.add(advertiseCarBtn);
@@ -165,6 +186,8 @@ public class CarListing extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(740, 750));
+        setPreferredSize(new java.awt.Dimension(740, 750));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,7 +223,7 @@ public class CarListing extends javax.swing.JFrame {
 
                 // Create a panel to display car details
                 JPanel carPanel = new JPanel(new BorderLayout());
-                carPanel.setPreferredSize(new Dimension(300, 200));
+              //  carPanel.setPreferredSize(new Dimension(300, 200));
                 carPanel.setBackground(Color.WHITE);
                 Border border = new LineBorder(Color.BLACK, 1);
                 carPanel.setBorder(BorderFactory.createCompoundBorder(border, BorderFactory.createEmptyBorder(10, 10, 10, 10)));
@@ -229,7 +252,7 @@ public class CarListing extends javax.swing.JFrame {
 
                 // Button to view details
                 JButton detailsButton = new JButton("View Car Details");
-                detailsButton.setPreferredSize(new Dimension(190, 40));
+             //   detailsButton.setPreferredSize(new Dimension(190, 40));
                 detailsButton.setBackground(Color.red);
                 detailsButton.addActionListener(new ActionListener() {
                     @Override
@@ -276,7 +299,7 @@ public class CarListing extends javax.swing.JFrame {
 
                 // Create a panel to display car details
                 JPanel carPanel = new JPanel(new BorderLayout());
-                carPanel.setPreferredSize(new Dimension(300, 200));
+                //carPanel.setPreferredSize(new Dimension(300, 200));
                 carPanel.setBackground(Color.WHITE);
                 Border border = new LineBorder(Color.BLACK, 1);
                 carPanel.setBorder(BorderFactory.createCompoundBorder(border, BorderFactory.createEmptyBorder(10, 10, 10, 10)));
@@ -354,7 +377,7 @@ public void updateCarListingsPrice(double maxPrice) {
 
             // Create a panel to display car details
             JPanel carPanel = new JPanel(new BorderLayout());
-            carPanel.setPreferredSize(new Dimension(300, 200));
+            carPanel.setPreferredSize(new Dimension(350, 550));
             carPanel.setBackground(Color.WHITE);
             Border border = new LineBorder(Color.BLACK, 1);
             carPanel.setBorder(BorderFactory.createCompoundBorder(border, BorderFactory.createEmptyBorder(10, 10, 10, 10)));
